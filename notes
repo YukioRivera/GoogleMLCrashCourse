@@ -1,0 +1,62 @@
+Framing 
+- How to frame a task as a ML prob. 
+- Supervised Learning 
+  - Label: It is the thing we are predicting. While training a model you are providing labels that is typically represented as "y"
+    Labels can be the future price of wheat, kind of animal in picture, etc
+  - features: input variables describing data. typically represented by the "x" variables (x1, x2, xn)
+    simple projects can use single feature but can be millions in larger projects.
+      In the spam detector example, the features could include the following:
+      words in the email text
+      sender's address
+      time of day the email was sent
+      email contains the phrase "one weird trick."
+  - unlabled: has {features?}: (x,y). this is used to predict on new data 
+  - model: maps examples to predicated variables - y. Defined by internal parameters which are learned
+
+  - Examples: a particular instance of data, **x** (We put x in boldface to indicate that it is a vector.)
+    Two categories od examples:
+      - labeled examples: includes both features and the label. that is:
+        example - labeled examples: {features, label}: (x, y)
+      - use labeled examples to train the model. in spam detector example, the labeled examples would be individual emails that user have marked as spam or not spam
+      For example, a table shows 5 labeled examples from a data set containing information about housing prices in California:
+        so housing data wil have medianage(feature), totalRooms(feature), totalbedrooms(feature), and the result medianhousevalue(label)
+      - unlabeled: example contains features with no labels - {features, ?}: (x, ?)
+      For example, Here are 3 unlabeled examples from the same housing dataset, which exclude medianHouseValue:
+        so housing data will have medianage(feature), totalRooms(feature), totalbedrooms(feature), with no result 
+
+  Models: a model defines a relationship between features and label. What is the machine predicting, doing, etc. Example, spam detection model can associate certain features with spam
+    - traning means creating or learning the mdoel. show model examples and gradually learn the relationship  between features and label 
+    - interence means applying the trained model to unlabeled examples. that is can the model do what it was trained to do? predict, categorize image, etc. For example, during inference, you can predict medianHouseValue for new unlabeled examples.
+  
+  Regression vs Classification: 
+    - regression: predicts continuous values. for example, regression models make predictions that answer questions like:
+      - what is the value of a house in cali
+      - what is the probability that a user will click this ad 
+    - classification: predicts discrete values. For example, classification models make predictions that answer questions like: 
+      - is a given email message spam or not spam 
+      - is this image of a dog or cat? 
+  
+Descending into ML
+  - Linear regression is a method for finding the straight line or hyperplane that best fits a set of points. 
+  Learning Objectives
+    Refresh your memory on line fitting.
+    Relate weights and biases in machine learning to slope and offset in line fitting.
+    Understand "loss" in general and squared loss in particular.
+
+  - A convenient Loss function for regression 
+    - L(2) fir a given example is also called squared error 
+    = Square of the difference betweeen prediction and label 
+    = (observation - prediction)^2
+    = (y - y`)^2
+
+  - when training a model we are interested in defining loss across all our dataset not just a single point, you can use a sumation function to acomplish it 
+
+Descending into ML: Linear Regression
+  - y = mx + b is similar to the ML function, y`= b + w1x1
+  - y` :  is the predicted label (a desired output)
+  - b : is the bias (the y-intercept), sometimes referred to as w(0)
+  - w(1) :  is the weight of feature 1. Weight is the same concept as the   "slope" m in the traditional equation of a line.
+  - x(1) is a feature (a known input)
+
+  - Training a model, means learning (determining) good values for all the weights and the bias from labeled examples 
+    - in supervised learning, a machine learning algorithm builds a model by examining many examples and attempting to find a model that minimizes loss, this process is called empirical risk minimization 
