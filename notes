@@ -79,3 +79,49 @@ Descending into ML: Linear Regression
   - `Σ` denotes the summation over all examples.
   - `observation_i` is the true value for the ith example.
   - `prediction(x_i)` is the predicted value for the ith example.
+
+Reducing Lost
+- To train a model you need to reduce the model's lost 
+Learning Objectives:
+- learn how to train a model 
+- uderstand the full gradient descent and some variants including:
+  - mini batch gradient descent 
+  - stochastic gradient descent 
+- experiment with learning rate
+
+Reducing Lost
+  How do we reduce lost?
+  - hyperparameters are the configuration settings use to tune how the model is trained 
+  - derivative of (y - y`)^2 with respect to the weights and biases tell us how lloss changes for a given example 
+    - simple to compute and convex 
+  - so we repeatedly take small steps in the direction that minimizes loss 
+    - we call these gradient steps 
+    - this strategy is called gradient descent 
+
+Weight Initialization 
+  - for convex problems, weights can start anywhere (say all 0s)
+    - convex: think bowel shape
+    - just one minumum
+  - but most ML problems, for example neural nets 
+    - non-convex: think of an egg crate 
+    - more than one minimum 
+    - strong dependency on initial values
+
+SGD and Mini-batch gradient descent 
+  - could compute gradient over entire data set on each step, but this turns out to be unncecessary 
+  - compute gradient on small batches help with computing 
+    - on every step, get a new random sample 
+  - Stochastic Gradient Descent: one example at a time 
+  - mini-batch gradient descent: batches of 10-1000 
+    - lost and gradient are averaged over the batch 
+
+Reducing Loss: an iterative approach 
+  - you use an iterative approach to develop a training model
+  - you start by guessing values and the model will tell you if you are getting "warmer" to the training model 
+  - the model takes one or more features as input and returns one prediction 
+  - you iterate through the model until you find the loss function with the lowest possible loss 
+  - you keep going until the loss stops changing or changes extremly slowly
+    - when you reach this point you can say that the model has converged 
+
+Reducing Loss: Gradient Descent 
+  - 
