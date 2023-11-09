@@ -60,3 +60,22 @@ Descending into ML: Linear Regression
 
   - Training a model, means learning (determining) good values for all the weights and the bias from labeled examples 
     - in supervised learning, a machine learning algorithm builds a model by examining many examples and attempting to find a model that minimizes loss, this process is called empirical risk minimization 
+  
+  # Squared loss: a popular loss function
+
+  The linear regression models we'll examine here use a loss function called squared loss (also known as L(2) loss). The squared loss for a single example is as follows:
+
+  `Loss = the square of the difference between the label and the prediction`
+  `Loss = (observation - prediction(x))^2`
+  `Loss = (y - y')^2`
+
+- Mean squared error is the avg squared loss per example. its how to measure the avg loss in the dataset relative to the predicted function 
+  # Mean Squared Error (MSE) Formula:
+
+  `MSE = (1/n) * Σ(observation_i - prediction(x_i))^2`
+
+  Where:
+  - `n` is the number of examples in the dataset.
+  - `Σ` denotes the summation over all examples.
+  - `observation_i` is the true value for the ith example.
+  - `prediction(x_i)` is the predicted value for the ith example.
